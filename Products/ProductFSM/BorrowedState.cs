@@ -16,6 +16,7 @@ namespace LibraryApp.Products.ProductFSM
         public override void returnProduct()
         {
             Console.WriteLine("Product returned. Thank you!");
+            this.product.transitionTo(new AvailableState());
         }
     }
 }

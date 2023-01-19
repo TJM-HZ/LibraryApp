@@ -11,7 +11,7 @@ namespace LibraryApp.Products.ProductFSM
     {
         protected Product product;
 
-        public void SetProduct(Product product)
+        public void setProduct(Product product)
         {
             this.product = product;
         }

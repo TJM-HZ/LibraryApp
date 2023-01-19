@@ -14,7 +14,13 @@ namespace LibraryApp.Products
 
         public void changeState(ProductState state)
         {
+            this.transitionTo(state);
+        }
+
+        public void transitionTo(ProductState state)
+        {
             this.state = state;
+            this.state.setProduct(this);
         }
     
     

@@ -11,6 +11,7 @@ namespace LibraryApp.Products.ProductFSM
         public override void borrowProduct()
         {
             Console.WriteLine("Product borrowed. Enjoy!");
+            this.product.transitionTo(new BorrowedState());
         }
 
         public override void returnProduct()
