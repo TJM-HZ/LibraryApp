@@ -7,11 +7,14 @@ using LibraryApp.Products.ProductFSM;
 
 namespace LibraryApp.Products
 {
-    abstract class Product
+    public abstract class Product
     {
-        private ProductState state;
+        protected ProductState state;
 
-        public Product(ProductState state) => this.transitionTo(state);
+        public string? Title { get; protected set; }
+        //protected DateTime? releaseDate;
+        //protected string creator;
+        //protected string publisher;
 
         public void transitionTo(ProductState state)
         {
@@ -28,5 +31,7 @@ namespace LibraryApp.Products
         {
             this.state.returnProduct();
         }
+
+        public abstract void printDetails();
     }
 }
