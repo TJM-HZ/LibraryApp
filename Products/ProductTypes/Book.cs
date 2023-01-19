@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryApp
+namespace LibraryApp.Products.ProductTypes
 {
-    class Book
+    class Book : Product
     {
         private string title;
         private string printLength;
