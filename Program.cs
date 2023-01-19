@@ -8,7 +8,7 @@ namespace LibraryApp
     {
         static void Main(string[] args)
         {
-            BookBuilder bookBuilder = new BookBuilder();
+            BookBuilder bookBuilder = BookBuilder.GetInstance();
             bookBuilder
                 .setTitle("Good Book")
                 .setAuthor("John Doe")
