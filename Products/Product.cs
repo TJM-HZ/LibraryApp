@@ -18,6 +18,15 @@ namespace LibraryApp.Products
             this.state = state;
             this.state.setProduct(this);
         }
-    
+
+        public void borrowProduct()
+        {
+            this.state.borrowProduct();
+        }
+
+        public void returnProduct()
+        {
+            this.state.returnProduct();
+        }
     }
 }
