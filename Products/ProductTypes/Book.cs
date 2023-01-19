@@ -9,29 +9,34 @@ namespace LibraryApp.Products.ProductTypes
 {
     class Book : Product
     {
-        private string title;
-        private string? printLength;
+        private string? author;
+        private string? illustrator;
+        private string? publisher;
+
         private string? language;
 
-        private string? author;
-        private string? publisher;
+        private string? country;
+
         private DateTime? publicationDate;
-        private string? genre;
+
+        private int? printLength;
+
         private string? isbn10;
         private string? isbn13;
 
-        public Book(string title, string? printLength, string? language, string? author, string? publisher, DateTime? publicationDate, string? genre, string? isbn10, string? isbn13, ProductState state)
+        public Book(string title, ProductState state, string? author, string? illustrator, string? publisher, string? language, string? country, DateTime? publicationDate, int? printLength, string? isbn10, string? isbn13)
         {
-            this.title = title;
-            this.printLength = printLength;
-            this.language = language;
+            this.Title = title;
             this.author = author;
+            this.illustrator = illustrator;
             this.publisher = publisher;
+            this.language = language;
+            this.country = country;
             this.publicationDate = publicationDate;
-            this.genre = genre;
+            this.printLength = printLength;
             this.isbn10 = isbn10;
             this.isbn13 = isbn13;
-            
+
             this.transitionTo(state);
         }
     }

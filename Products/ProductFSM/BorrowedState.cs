@@ -10,12 +10,12 @@ namespace LibraryApp.Products.ProductFSM
     {
         public override void borrowProduct()
         {
-            Console.WriteLine("Product was already borrowed. Sorry.");
+            Console.WriteLine($"Sorry, {this.product.GetType()} {this.product.Title} has already been borrowed...");
         }
 
         public override void returnProduct()
         {
-            Console.WriteLine("Product returned. Thank you!");
+            Console.WriteLine($"Product {this.product.Title} returned. Thank you!");
             this.product.transitionTo(new AvailableState());
         }
     }

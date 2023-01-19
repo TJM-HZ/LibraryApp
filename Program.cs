@@ -7,11 +7,11 @@ namespace LibraryApp
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book("LOTR", "500", "English", "Tolkien", "NoIdea", null, "Fantasy", "0000000000", "000-0000000000", new AvailableState());
-            book1.borrowProduct();
-            book1.borrowProduct();
-            book1.returnProduct();
-            book1.returnProduct();
+            Book book1 = new Book("1984", new AvailableState(), null, null, null, null, null, null, null, null, null);
+            Film film1 = new Film("Batman", new BorrowedState(), null, null, null, null, null, null, null, null, null, null, null, null);
+
+            film1.borrowProduct();
+
         }
     }
 }

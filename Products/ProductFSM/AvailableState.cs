@@ -10,13 +10,13 @@ namespace LibraryApp.Products.ProductFSM
     {
         public override void borrowProduct()
         {
-            Console.WriteLine("Product borrowed. Enjoy!");
+            Console.WriteLine($"Product {this.product.Title} is now borrowed. Enjoy!");
             this.product.transitionTo(new BorrowedState());
         }
 
         public override void returnProduct()
         {
-            Console.WriteLine("This product wasn't borrowed, so you can't return it...");
+            Console.WriteLine($"Product {this.product.Title} wasn't borrowed, so it cannot be returned...");
         }
     }
 }
