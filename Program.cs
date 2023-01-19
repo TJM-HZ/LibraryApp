@@ -1,4 +1,5 @@
-﻿using LibraryApp.Products.ProductFSM;
+﻿using LibraryApp.Products.ProductBuilders;
+using LibraryApp.Products.ProductFSM;
 using LibraryApp.Products.ProductTypes;
 
 namespace LibraryApp
@@ -7,11 +8,8 @@ namespace LibraryApp
     {
         static void Main(string[] args)
         {
-            Book book1 = new Book("1984", new AvailableState(), null, null, null, null, null, null, null, null, null);
-            Film film1 = new Film("Batman", new BorrowedState(), null, null, null, null, null, null, null, null, null, null, null, null);
-
-            film1.borrowProduct();
-
+            BookBuilder bookBuilder = new BookBuilder();
+            bookBuilder
         }
     }
 }

@@ -7,7 +7,7 @@ using LibraryApp.Products.ProductFSM;
 
 namespace LibraryApp.Products
 {
-    abstract class Product
+    public abstract class Product
     {
         protected ProductState state;
 
@@ -31,5 +31,7 @@ namespace LibraryApp.Products
         {
             this.state.returnProduct();
         }
+
+        public abstract void printDetails();
     }
 }

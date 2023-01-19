@@ -40,5 +40,10 @@ namespace LibraryApp.Products.ProductTypes
 
             this.transitionTo(state);
         }
+
+        public override void printDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

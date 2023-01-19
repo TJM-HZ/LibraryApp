@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryApp.Products.ProductFSM
 {
-    abstract class ProductState
+    public abstract class ProductState
     {
         protected Product product;
 
