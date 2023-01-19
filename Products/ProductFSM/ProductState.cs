@@ -5,20 +5,18 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryApp
+namespace LibraryApp.Products.ProductFSM
 {
     abstract class ProductState
     {
         protected Product product;
 
-        public ProductState(Product product)
+        public void SetProduct(Product product)
         {
             this.product = product;
         }
 
         public abstract void borrowProduct();
         public abstract void returnProduct();
-        public abstract void damageProduct();
-        public abstract void repairProduct();
     }
 }
