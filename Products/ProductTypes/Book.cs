@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryApp.Products.ProductFSM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace LibraryApp.Products.ProductTypes
     class Book : Product
     {
         private string title;
-        private string printLength;
-        private string language;
+        private string? printLength;
+        private string? language;
 
         private string? author;
         private string? publisher;
@@ -19,7 +20,7 @@ namespace LibraryApp.Products.ProductTypes
         private string? isbn10;
         private string? isbn13;
 
-        private Book(string title, string printLength, string language, string? author, string? publisher, DateTime? publicationDate, string? genre, string? isbn10, string? isbn13)
+        public Book(string title, string? printLength, string? language, string? author, string? publisher, DateTime? publicationDate, string? genre, string? isbn10, string? isbn13, ProductState state)
         {
             this.title = title;
             this.printLength = printLength;
@@ -30,6 +31,8 @@ namespace LibraryApp.Products.ProductTypes
             this.genre = genre;
             this.isbn10 = isbn10;
             this.isbn13 = isbn13;
+            
+            this.transitionTo(state);
         }
     }
 }

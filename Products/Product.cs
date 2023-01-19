@@ -9,9 +9,7 @@ namespace LibraryApp.Products
 {
     abstract class Product
     {
-        private ProductState state;
-
-        public Product(ProductState state) => this.transitionTo(state);
+        protected ProductState state;
 
         public void transitionTo(ProductState state)
         {
