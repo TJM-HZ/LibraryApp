@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
-    class Book
+    class Book : Product
     {
         private string title;
         private string printLength;
