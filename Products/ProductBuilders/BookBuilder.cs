@@ -36,7 +36,7 @@ namespace LibraryApp.Products.ProductBuilders
 
         private static readonly object _lock = new object();
 
-        public static BookBuilder GetInstance(string value)
+        public static BookBuilder GetInstance()
         {
             if (_instance == null)
             {
@@ -45,16 +45,11 @@ namespace LibraryApp.Products.ProductBuilders
                     if (_instance == null)
                     {
                         _instance = new BookBuilder();
-                        _instance.Value = value;
                     }
                 }
             }
             return _instance;
         }
-
-        public string Value { get; set; }
-
-
 
         public BookBuilder setTitle(string title)
         {
