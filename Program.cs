@@ -10,6 +10,12 @@ namespace LibraryApp
         {
             BookBuilder bookBuilder = new BookBuilder();
             bookBuilder
+                .setTitle("Good Book")
+                .setAuthor("John Doe")
+                .setState(new BorrowedState());
+            Book GoodBook = bookBuilder.build();
+            GoodBook.printDetails();
+            GoodBook.borrowProduct();
         }
     }
 }

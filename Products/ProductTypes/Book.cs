@@ -9,6 +9,8 @@ namespace LibraryApp.Products.ProductTypes
 {
     public class Book : Product
     {
+        // TODO: Maybe I should add auto-implemented accessors for these fields?
+
         private string? author;
         private string? illustrator;
         private string? publisher;
@@ -22,9 +24,29 @@ namespace LibraryApp.Products.ProductTypes
         private string? isbn10;
         private string? isbn13;
 
-        public Book(string title, ProductState state, string? author, string? illustrator, string? publisher, string? language, string? country, int? printlength, string? isbn10, string? isbn13)
+
+        // TODO: Maybe the constructor can be cleaned up now that I have a Builder?
+        public Book(string? title,
+            ProductState? state, 
+            string? author, string? 
+            illustrator, string? 
+            publisher, string? 
+            language, string? country, 
+            int? printlength, 
+            string? isbn10, 
+            string? isbn13)
         {
             this.Title = title;
+
+            if (state != null)
+            {
+                this.transitionTo(state);
+            } else
+            {
+                this.transitionTo(new AvailableState());
+            }
+
+
             this.author = author;
             this.illustrator = illustrator;
             this.publisher = publisher;
@@ -33,8 +55,6 @@ namespace LibraryApp.Products.ProductTypes
             this.printLength = printlength;
             this.isbn10 = isbn10;
             this.isbn13 = isbn13;
-
-            this.transitionTo(state);
         }
 
         public override void printDetails()

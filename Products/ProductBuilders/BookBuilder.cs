@@ -12,6 +12,8 @@ namespace LibraryApp.Products.ProductBuilders
     {
         private string? title;
 
+        private ProductState? state;
+
         private string? author;
         private string? illustrator;
         private string? publisher;
@@ -25,10 +27,19 @@ namespace LibraryApp.Products.ProductBuilders
         private string? isbn10;
         private string? isbn13;
 
+        public BookBuilder()
+        {
+            this.reset();
+        }
         public BookBuilder setTitle(string title)
         {
             this.title = title;
             return this;
+        }
+
+        public BookBuilder setState(ProductState state) {
+            this.state = state;
+            return this;        
         }
 
         public BookBuilder setAuthor(string author)
@@ -82,11 +93,20 @@ namespace LibraryApp.Products.ProductBuilders
         {
             this.title = null;
             this.author = null;
+            this.illustrator = null;
+            this.publisher=null;
+            this.language = null;
+            this.country = null;
+            this.printLength = null;
+            this.isbn10 = null;
+            this.isbn13 = null;
         }
 
         public Book build()
         {
-            return new Book(this.title, new AvailableState(), this.author, this.illustrator, this.publisher, this.language, this.country, this.printLength, this.isbn10, this.isbn13);
+            Book result = new Book(this.title, this.state, this.author, this.illustrator, this.publisher, this.language, this.country, this.printLength, this.isbn10, this.isbn13);
+            this.reset();
+            return result;
         }
 
 
