@@ -10,35 +10,60 @@ namespace LibraryApp.Products.ProductBuilders
 {
     public class BookBuilder
     {
-        private string? title;
+        private string? _title;
 
-        private ProductState? state;
+        private ProductState? _state;
 
         private string? author;
-        private string? illustrator;
-        private string? publisher;
+        private string? _illustrator;
+        private string? _publisher;
 
-        private string? language;
+        private string? _language;
 
-        private string? country;
+        private string? _country;
 
-        private int? printLength;
+        private int? _printLength;
 
-        private string? isbn10;
-        private string? isbn13;
+        private string? _isbn10;
+        private string? _isbn13;
 
-        public BookBuilder()
-        {
-            this.reset();
+        private BookBuilder() 
+        { 
+            this.reset(); 
         }
+
+        private static BookBuilder _instance;
+
+        private static readonly object _lock = new object();
+
+        public static BookBuilder GetInstance(string value)
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new BookBuilder();
+                        _instance.Value = value;
+                    }
+                }
+            }
+            return _instance;
+        }
+
+        public string Value { get; set; }
+
+
+
         public BookBuilder setTitle(string title)
         {
-            this.title = title;
+            this._title = title;
             return this;
         }
 
         public BookBuilder setState(ProductState state) {
-            this.state = state;
+            this._state = state;
             return this;        
         }
 
@@ -49,62 +74,62 @@ namespace LibraryApp.Products.ProductBuilders
         }
         public BookBuilder setIllustrator(string illustrator)
         {
-            this.illustrator = illustrator;
+            this._illustrator = illustrator;
             return this;
         }
 
         public BookBuilder setPublisher(string publisher)
         {
-            this.publisher = publisher;
+            this._publisher = publisher;
             return this;
         }
 
         public BookBuilder setLanguage(string language)
         {
-            this.language = language;
+            this._language = language;
             return this;
         }
 
         public BookBuilder setCountry(string country)
         {
-            this.country = country;
+            this._country = country;
             return this;
         }
 
         public BookBuilder setPrintLength(int printLength)
         {
-            this.printLength = printLength;
+            this._printLength = printLength;
             return this;
         }
 
         private BookBuilder setISBN10(string isbn10)
         {
-            this.isbn10 = isbn10;
+            this._isbn10 = isbn10;
             return this;
         }
 
         private BookBuilder setISBN13(string isbn13)
         {
-            this.isbn13 = isbn13;
+            this._isbn13 = isbn13;
             return this;
         }
 
         public void reset()
         {
-            this.title = null;
+            this._title = null;
             this.author = null;
-            this.illustrator = null;
-            this.publisher=null;
-            this.language = null;
-            this.country = null;
-            this.printLength = null;
-            this.isbn10 = null;
-            this.isbn13 = null;
+            this._illustrator = null;
+            this._publisher=null;
+            this._language = null;
+            this._country = null;
+            this._printLength = null;
+            this._isbn10 = null;
+            this._isbn13 = null;
         }
 
         public Book build()
         {
-            Book result = new Book(this.title, this.state, this.author, this.illustrator, this.publisher, this.language, this.country, this.printLength, this.isbn10, this.isbn13);
+            Book result = new Book(this._title, this._state, this.author, this._illustrator, this._publisher, this._language, this._country, this._printLength, this._isbn10, this._isbn13);
             this.reset();
             return result;
         }
