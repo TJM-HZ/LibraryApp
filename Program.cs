@@ -6,20 +6,46 @@ namespace LibraryApp
 {
     internal class Program
     {
+        // TODO: Move this stuff to a different class
         static void Main(string[] args)
         {
             BookBuilder bb = BookBuilder.GetInstance();
 
+            string title = @"  _      _ _                                               
+ | |    (_) |                            /\                
+ | |     _| |__  _ __ __ _ _ __ _   _   /  \   _ __  _ __  
+ | |    | | '_ \| '__/ _` | '__| | | | / /\ \ | '_ \| '_ \ 
+ | |____| | |_) | | | (_| | |  | |_| |/ ____ \| |_) | |_) |
+ |______|_|_.__/|_|  \__,_|_|   \__, /_/    \_\ .__/| .__/ 
+                                 __/ |        | |   | |    
+                                |___/         |_|   |_|    
+";
 
-            string prompt = 
-                "LIBRARY APP\n" +
-                "------------------------\n" +
-                "Select an option with the arrow keys and press ENTER";
-            string[] options = { "Add new book", "Borrow Book", "Return Book" };
+
+            string prompt = title + 
+                "\n" +
+                "Use the arrow keys to select an option,\nthen press ENTER to confirm\n";
+            string[] options = { "Add new book", "Borrow Book", "Return Book", "Exit App" };
             Menu mainMenu = new Menu(prompt, options);
             int selectedIndex = mainMenu.Run();
             Console.ReadKey(true);
 
+            switch (selectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    Console.WriteLine("BYE");
+                    Environment.Exit(0);
+                    break;
+
+            }
 
 
             
