@@ -124,6 +124,10 @@ namespace LibraryApp.Products.ProductBuilders
 
         public Book build()
         {
+            if(this._title== null)
+            {
+                this._title = "LIBRARY ERROR: NO TITLE FOUND";
+            }
             Book result = new Book(this._title, this._state, this.author, this._illustrator, this._publisher, this._language, this._country, this._printLength, this._isbn10, this._isbn13);
             this.reset();
             return result;
