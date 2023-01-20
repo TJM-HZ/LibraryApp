@@ -9,37 +9,37 @@ namespace LibraryApp.Products
 {
     class ProductBundle : Product
     {
-        protected List<Product> _products = new List<Product>();
+        protected List<Product> Products = new List<Product>();
 
         public ProductBundle(string title)
         {
             Title = title;
         }
 
-        public virtual void transitionTo(ProductState state)
+        public override void TransitionTo(ProductState state)
         {
-            foreach (Product product in _products) { 
-                product.transitionTo(state);
+            foreach (Product product in Products) { 
+                product.TransitionTo(state);
             }
         }
 
         public override void Add(Product product)
         {
-            this._products.Add(product);
+            this.Products.Add(product);
         }
 
         public override void Remove(Product product)
         {
-            this._products.Remove(product);
+            this.Products.Remove(product);
         }
 
-        public override void printDetails()
+        public override void PrintDetails()
         {
             Console.WriteLine($"Bundle Name: {Title}");
 
-            foreach (Product product in this._products)
+            foreach (Product product in this.Products)
             {
-                product.printDetails();
+                product.PrintDetails();
             }
         }
     }

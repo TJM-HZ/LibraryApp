@@ -9,14 +9,14 @@ namespace LibraryApp.Products.ProductFSM
 {
     public abstract class ProductState
     {
-        protected Product product;
+        protected Product Product;
 
-        public void setProduct(Product product)
+        public void SetProduct(Product product)
         {
-            this.product = product;
+            this.Product = product;
         }
 
-        public abstract void borrowProduct();
-        public abstract void returnProduct();
+        public abstract void BorrowProduct();
+        public abstract void ReturnProduct();
     }
 }

@@ -9,39 +9,39 @@ namespace LibraryApp.Products.ProductTypes
 {
     class Film : Product
     {
-        private string? director;
-        private string? writer;
-        private string? producer;
-        private string? cinematography;
-        private string? editor;
-        private string? composer;
-        private string? productionCompany;
-        private string? distributor;
-        private DateTime? releaseDate;
-        private int? runningTime; // Running time in minutes.
-        private string? country;
-        private string? language;
+        private string? _director;
+        private string? _writer;
+        private string? _producer;
+        private string? _cinematography;
+        private string? _editor;
+        private string? _composer;
+        private string? _productionCompany;
+        private string? _distributor;
+        private DateTime? _releaseDate;
+        private int? _runningTime; // Running time in minutes.
+        private string? _country;
+        private string? _language;
 
         public Film(string title, ProductState state, string? director, string? writer, string? producer, string? cinematography, string? editor, string? composer, string? productionCompany, string? distributor, DateTime? releaseDate, int? runningTime, string? country, string? language)
         {
             this.Title = title;
-            this.director = director;
-            this.writer = writer;
-            this.producer = producer;
-            this.cinematography = cinematography;
-            this.editor = editor;
-            this.composer = composer;
-            this.productionCompany = productionCompany;
-            this.distributor = distributor;
-            this.releaseDate = releaseDate;
-            this.runningTime = runningTime;
-            this.country = country;
-            this.language = language;
+            this._director = director;
+            this._writer = writer;
+            this._producer = producer;
+            this._cinematography = cinematography;
+            this._editor = editor;
+            this._composer = composer;
+            this._productionCompany = productionCompany;
+            this._distributor = distributor;
+            this._releaseDate = releaseDate;
+            this._runningTime = runningTime;
+            this._country = country;
+            this._language = language;
 
-            this.transitionTo(state);
+            this.TransitionTo(state);
         }
 
-        public override void printDetails()
+        public override void PrintDetails()
         {
             throw new NotImplementedException();
         }

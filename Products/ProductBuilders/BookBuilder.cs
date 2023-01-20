@@ -14,7 +14,7 @@ namespace LibraryApp.Products.ProductBuilders
 
         private ProductState? _state;
 
-        private string? author;
+        private string? _author;
         private string? _illustrator;
         private string? _publisher;
 
@@ -29,18 +29,18 @@ namespace LibraryApp.Products.ProductBuilders
 
         private BookBuilder() 
         { 
-            this.reset(); 
+            this.Reset(); 
         }
 
         private static BookBuilder _instance;
 
-        private static readonly object _lock = new object();
+        private static readonly object Lock = new object();
 
         public static BookBuilder GetInstance()
         {
             if (_instance == null)
             {
-                lock (_lock)
+                lock (Lock)
                 {
                     if (_instance == null)
                     {
@@ -51,68 +51,68 @@ namespace LibraryApp.Products.ProductBuilders
             return _instance;
         }
 
-        public BookBuilder setTitle(string title)
+        public BookBuilder SetTitle(string title)
         {
             this._title = title;
             return this;
         }
 
-        public BookBuilder setState(ProductState state) {
+        public BookBuilder SetState(ProductState state) {
             this._state = state;
             return this;        
         }
 
-        public BookBuilder setAuthor(string author)
+        public BookBuilder SetAuthor(string author)
         {
-            this.author = author;
+            this._author = author;
             return this;
         }
-        public BookBuilder setIllustrator(string illustrator)
+        public BookBuilder SetIllustrator(string illustrator)
         {
             this._illustrator = illustrator;
             return this;
         }
 
-        public BookBuilder setPublisher(string publisher)
+        public BookBuilder SetPublisher(string publisher)
         {
             this._publisher = publisher;
             return this;
         }
 
-        public BookBuilder setLanguage(string language)
+        public BookBuilder SetLanguage(string language)
         {
             this._language = language;
             return this;
         }
 
-        public BookBuilder setCountry(string country)
+        public BookBuilder SetCountry(string country)
         {
             this._country = country;
             return this;
         }
 
-        public BookBuilder setPrintLength(int printLength)
+        public BookBuilder SetPrintLength(int printLength)
         {
             this._printLength = printLength;
             return this;
         }
 
-        private BookBuilder setISBN10(string isbn10)
+        private BookBuilder SetIsbn10(string isbn10)
         {
             this._isbn10 = isbn10;
             return this;
         }
 
-        private BookBuilder setISBN13(string isbn13)
+        private BookBuilder SetIsbn13(string isbn13)
         {
             this._isbn13 = isbn13;
             return this;
         }
 
-        public void reset()
+        public void Reset()
         {
             this._title = null;
-            this.author = null;
+            this._author = null;
             this._illustrator = null;
             this._publisher=null;
             this._language = null;
@@ -122,14 +122,14 @@ namespace LibraryApp.Products.ProductBuilders
             this._isbn13 = null;
         }
 
-        public Book build()
+        public Book Build()
         {
             if(this._title== null)
             {
                 this._title = "LIBRARY ERROR: NO TITLE FOUND";
             }
-            Book result = new Book(this._title, this._state, this.author, this._illustrator, this._publisher, this._language, this._country, this._printLength, this._isbn10, this._isbn13);
-            this.reset();
+            Book result = new Book(this._title, this._state, this._author, this._illustrator, this._publisher, this._language, this._country, this._printLength, this._isbn10, this._isbn13);
+            this.Reset();
             return result;
         }
 
