@@ -4,30 +4,30 @@ namespace LibraryApp.Products
 {
     public abstract class Product
     {
-        protected ProductState state;
+        protected ProductState State;
 
         public string Title { get; protected set; }
         //protected DateTime? releaseDate;
         //protected string creator;
         //protected string publisher;
 
-        public virtual void transitionTo(ProductState state)
+        public virtual void TransitionTo(ProductState state)
         {
-            this.state = state;
-            this.state.setProduct(this);
+            this.State = state;
+            this.State.SetProduct(this);
         }
 
-        public void borrowProduct()
+        public void BorrowProduct()
         {
-            this.state.borrowProduct();
+            this.State.BorrowProduct();
         }
 
-        public void returnProduct()
+        public void ReturnProduct()
         {
-            this.state.returnProduct();
+            this.State.ReturnProduct();
         }
 
-        public abstract void printDetails();
+        public abstract void PrintDetails();
 
 
         public virtual void Add(Product product)

@@ -12,23 +12,23 @@ namespace LibraryApp
             BookBuilder bb = BookBuilder.GetInstance();
 
             Book book1 = bb
-                .setTitle("funbook")
-                .setAuthor("A funny person")
-                .build();
+                .SetTitle("funbook")
+                .SetAuthor("A funny person")
+                .Build();
             Book book2 = bb
-                .setTitle("booker2")
-                .setAuthor("A writer of books")
-                .build();
+                .SetTitle("booker2")
+                .SetAuthor("A writer of books")
+                .Build();
 
             ProductBundle bundle1 = new ProductBundle("Big Bundle");
             bundle1.Add(book1);
             bundle1.Add(book2);
 
-            bundle1.printDetails();
+            bundle1.PrintDetails();
 
             bundle1.Remove(book1);
 
-            bundle1.printDetails();
+            bundle1.PrintDetails();
         }
     }
 }

@@ -11,18 +11,18 @@ namespace LibraryApp.Products.ProductTypes
     {
         // TODO: Maybe I should add auto-implemented accessors for these fields?
 
-        private string? author;
-        private string? illustrator;
-        private string? publisher;
+        private string? _author;
+        private string? _illustrator;
+        private string? _publisher;
 
-        private string? language;
+        private string? _language;
 
-        private string? country;
+        private string? _country;
 
-        private int? printLength;
+        private int? _printLength;
 
-        private string? isbn10;
-        private string? isbn13;
+        private string? _isbn10;
+        private string? _isbn13;
 
 
         // TODO: Maybe the constructor can be cleaned up now that I have a Builder?
@@ -40,35 +40,35 @@ namespace LibraryApp.Products.ProductTypes
 
             if (state != null)
             {
-                this.transitionTo(state);
+                this.TransitionTo(state);
             } else
             {
-                this.transitionTo(new AvailableState());
+                this.TransitionTo(new AvailableState());
             }
 
 
-            this.author = author;
-            this.illustrator = illustrator;
-            this.publisher = publisher;
-            this.language = language;
-            this.country = country;
-            this.printLength = printlength;
-            this.isbn10 = isbn10;
-            this.isbn13 = isbn13;
+            this._author = author;
+            this._illustrator = illustrator;
+            this._publisher = publisher;
+            this._language = language;
+            this._country = country;
+            this._printLength = printlength;
+            this._isbn10 = isbn10;
+            this._isbn13 = isbn13;
         }
 
-        public override void printDetails()
+        public override void PrintDetails()
         {
             Console.WriteLine("----------------------------------------");
             Console.WriteLine($"Title: {this.Title}");
-            Console.WriteLine($"Author: {this.author}");
-            Console.WriteLine($"Illustrator: {this.illustrator}");
-            Console.WriteLine($"Publisher: {this.publisher}");
-            Console.WriteLine($"Language: {this.language}");
-            Console.WriteLine($"Country: {this.country}");
-            Console.WriteLine($"Print Length: {this.printLength}");
-            Console.WriteLine($"ISBN-10: {this.isbn10}");
-            Console.WriteLine($"ISBN-13: {this.isbn13}");
+            Console.WriteLine($"Author: {this._author}");
+            Console.WriteLine($"Illustrator: {this._illustrator}");
+            Console.WriteLine($"Publisher: {this._publisher}");
+            Console.WriteLine($"Language: {this._language}");
+            Console.WriteLine($"Country: {this._country}");
+            Console.WriteLine($"Print Length: {this._printLength}");
+            Console.WriteLine($"ISBN-10: {this._isbn10}");
+            Console.WriteLine($"ISBN-13: {this._isbn13}");
             Console.WriteLine("----------------------------------------");
         }
     }
