@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LibraryApp.Products.ProductFSM;
+﻿using LibraryApp.Products.ProductFSM;
 
 namespace LibraryApp.Products
 {
@@ -16,7 +11,7 @@ namespace LibraryApp.Products
         //protected string creator;
         //protected string publisher;
 
-        public void transitionTo(ProductState state)
+        public virtual void transitionTo(ProductState state)
         {
             this.state = state;
             this.state.setProduct(this);
@@ -33,5 +28,15 @@ namespace LibraryApp.Products
         }
 
         public abstract void printDetails();
+
+
+        public virtual void Add(Product product)
+        {
+            throw new NotImplementedException();
+        }
+        public virtual void Remove(Product product)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

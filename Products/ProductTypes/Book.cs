@@ -59,15 +59,17 @@ namespace LibraryApp.Products.ProductTypes
 
         public override void printDetails()
         {
+            Console.WriteLine("----------------------------------------");
             Console.WriteLine($"Title: {this.Title}");
             Console.WriteLine($"Author: {this.author}");
             Console.WriteLine($"Illustrator: {this.illustrator}");
             Console.WriteLine($"Publisher: {this.publisher}");
             Console.WriteLine($"Language: {this.language}");
             Console.WriteLine($"Country: {this.country}");
-            Console.WriteLine($"printLength: {this.printLength}");
+            Console.WriteLine($"Print Length: {this.printLength}");
             Console.WriteLine($"ISBN-10: {this.isbn10}");
             Console.WriteLine($"ISBN-13: {this.isbn13}");
+            Console.WriteLine("----------------------------------------");
         }
     }
 }
