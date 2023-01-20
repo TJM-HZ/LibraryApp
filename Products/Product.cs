@@ -11,7 +11,7 @@ namespace LibraryApp.Products
     {
         protected ProductState state;
 
-        public string? Title { get; protected set; }
+        public string Title { get; protected set; }
         //protected DateTime? releaseDate;
         //protected string creator;
         //protected string publisher;

@@ -26,7 +26,7 @@ namespace LibraryApp.Products.ProductTypes
 
 
         // TODO: Maybe the constructor can be cleaned up now that I have a Builder?
-        public Book(string? title,
+        public Book(string title,
             ProductState? state, 
             string? author, string? 
             illustrator, string? 
