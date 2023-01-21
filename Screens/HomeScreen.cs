@@ -12,6 +12,7 @@ namespace LibraryApp.Screens
 
         public override void Run()
         {
+            Console.Clear();
             Console.WriteLine(@"
   _      _ _                                               
  | |    (_) |                            /\                
@@ -21,8 +22,10 @@ namespace LibraryApp.Screens
  |______|_|_.__/|_|  \__,_|_|   \__, /_/    \_\ .__/| .__/ 
                                  __/ |        | |   | |    
                                 |___/         |_|   |_|    
-");
 
+
+");
+            Console.WriteLine("Use the up and down arrow keys to navigate the menus and press ENTER to select an option");
             string[] options = { "Manage Books", "Manage Bundles", "Exit App" };
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();
@@ -30,13 +33,14 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    Console.WriteLine("OPTION 0 SELECTED");
+                    BookHubScreen bookHubScreen = new BookHubScreen(this.App);
+                    bookHubScreen.Run();
                     break;
                 case 1:
                     Console.WriteLine("OPTION 1 SELECTED");
                     break;
                 case 2:
-                    Console.WriteLine("OPTION 2 SELECTED");
+                    Environment.Exit(0);
                     break;
             }
             

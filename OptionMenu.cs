@@ -9,9 +9,9 @@ namespace LibraryApp
 {
     class OptionMenu
     {
-        protected string[] _options;
-        protected int _selectedIndex;
 
+        private string[] _options;
+        private int _selectedIndex;
 
         public OptionMenu(string[] options)
         {
@@ -51,19 +51,18 @@ namespace LibraryApp
         public int Run()
         {
             ConsoleKey keyPressed;
+            DisplayOptions();
+
             do
             {
-                // Clear the last line upon making an error
-                
-                foreach(string s in _options)
-                {
-                    Console.SetCursorPosition(0, Console.CursorTop);
-                    Console.Write(new string(' ', Console.BufferWidth));
-                }
-
                 Console.SetCursorPosition(0, Console.CursorTop - this._options.Length);
+                Console.Write("", Console.BufferWidth);
+
+
+
 
                 DisplayOptions();
+                
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                 keyPressed = keyInfo.Key;
@@ -81,6 +80,5 @@ namespace LibraryApp
 
             return _selectedIndex;
         }
-
     }
 }
