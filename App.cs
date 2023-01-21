@@ -18,6 +18,7 @@ namespace LibraryApp
         public HomeScreen HomeScreen;
         public BookHubScreen BookHubScreen;
         public BookCreationScreen BookCreationScreen;
+        public BookIndexScreen BookIndexScreen;
 
 
 
@@ -28,7 +29,7 @@ namespace LibraryApp
             HomeScreen= new HomeScreen(this);
             BookHubScreen= new BookHubScreen(this);
             BookCreationScreen= new BookCreationScreen(this);
-
+            BookIndexScreen= new BookIndexScreen(this);
 
             ChangeScreen(new HomeScreen(this));
         }

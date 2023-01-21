@@ -23,7 +23,7 @@ namespace LibraryApp.Screens.BookScreens
                     App.ChangeScreen(App.BookCreationScreen);
                     break;
                 case 1:
-                    Console.WriteLine("OPTION 1 SELECTED");
+                    App.ChangeScreen(App.BookIndexScreen);
                     break;
                 case 2:
                     App.ChangeScreen(App.HomeScreen);

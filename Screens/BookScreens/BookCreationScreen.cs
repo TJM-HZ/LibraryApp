@@ -46,10 +46,10 @@ namespace LibraryApp.Screens.BookScreens
 
         private static void requiredSuffix()
         {
-            
+            var color = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write($"*");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = color;
         }
 
         public void StringField(string fieldName, bool isRequired, Func<string, BookBuilder> method)
@@ -111,7 +111,6 @@ namespace LibraryApp.Screens.BookScreens
             Console.Write($"{fieldName}");
             if(isRequired) requiredSuffix();
             Console.Write(":");
-
 
             string input = Console.ReadLine();
             return input;
