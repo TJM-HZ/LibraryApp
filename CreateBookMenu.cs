@@ -13,9 +13,13 @@ namespace LibraryApp
         {
             Console.Clear();
             Console.WriteLine("Creating a new book");
-            Console.WriteLine("Fields marked with * are required");
+            Console.Write($"Fields marked with ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"*");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" are required\n");
             StringField("Title", true, bb.Title);
-            StringField("Author", true, bb.Author);
+            StringField("Author", false, bb.Author);
         }
         public void StringField(string fieldName, bool isRequired, Func<string, BookBuilder> method)
         {
@@ -24,18 +28,25 @@ namespace LibraryApp
             string suffix = "";
             if (isRequired) { suffix = "*"; }
 
-            Console.Write($"{fieldName}{suffix}: ");
+            Console.Write($"{fieldName}");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"{suffix}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(":");
+
+
             string input = Console.ReadLine();
-            if (input == null || input == "")
+            
+            if (isRequired && (input == null || input == ""))
             {
                 // Clear the last line upon making an error
                 Console.SetCursorPosition(0, Console.CursorTop);
                 Console.Write(new String(' ', Console.BufferWidth));
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
 
-                Console.ForegroundColor = ConsoleColor.Red;
+                //Console.ForegroundColor = ConsoleColor.Red;
                 StringField(fieldName, true, method);
-                Console.ResetColor();
+                //Console.ResetColor();
             }
             else
             {
