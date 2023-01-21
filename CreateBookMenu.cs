@@ -14,17 +14,27 @@ namespace LibraryApp
             Console.Clear();
             Console.WriteLine("Creating a new book");
             Console.WriteLine("Fields marked with * are required");
-            RequiredStringField("Title", bb, bb.Title);
-            RequiredStringField("Author", bb, bb.Author);
+            StringField("Title", true, bb, bb.Title);
+            StringField("Author", true, bb, bb.Author);
         }
-        public void RequiredStringField(string fieldName, BookBuilder bb, Func<string, BookBuilder> method)
+        public void StringField(string fieldName, bool isRequired, BookBuilder bb, Func<string, BookBuilder> method)
         {
-            Console.Write($"{fieldName}*: ");
+            // TODO: Make line white once it's valid again
+            string suffix = "";
+            if (isRequired) { suffix = "*"; }
+
+            Console.Write($"{fieldName}{suffix}: ");
             string input = Console.ReadLine();
             if (input == null || input == "")
             {
-                Console.Clear();
-                RequiredStringField(fieldName, bb, method);
+                // Clear the last line upon making an error
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.Write(new String(' ', Console.BufferWidth));
+                Console.SetCursorPosition(0, Console.CursorTop - 1);
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                StringField(fieldName, true, bb, method);
+                Console.ResetColor();
             }
             else
             {
