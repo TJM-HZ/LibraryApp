@@ -11,7 +11,6 @@ namespace LibraryApp
         static void Main(string[] args)
         {
             App App = new App();
-            App.Start();
         }
     }
 }

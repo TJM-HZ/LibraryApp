@@ -33,8 +33,7 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    BookHubScreen bookHubScreen = new BookHubScreen(this.App);
-                    bookHubScreen.Run();
+                    App.ChangeScreen(App.BookHubScreen);
                     break;
                 case 1:
                     Console.WriteLine("OPTION 1 SELECTED");

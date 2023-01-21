@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryApp.Screens
+namespace LibraryApp.Screens.BookScreens
 {
     class BookHubScreen : Screen
     {
-        public BookHubScreen(App app) : base(app){}
+        public BookHubScreen(App app) : base(app) { }
 
         public override void Run()
         {
@@ -20,16 +20,16 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    Console.WriteLine("OPTION 0 SELECTED");
+                    App.ChangeScreen(App.BookCreationScreen);
                     break;
                 case 1:
                     Console.WriteLine("OPTION 1 SELECTED");
                     break;
                 case 2:
-                    new HomeScreen(this.App).Run();
+                    App.ChangeScreen(App.HomeScreen);
                     break;
             }
-            
+
         }
     }
 }
