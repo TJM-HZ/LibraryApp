@@ -11,6 +11,9 @@ namespace LibraryApp
         static void Main(string[] args)
         {
             App App = new App();
+
+
+            GlobalLibrary glib = GlobalLibrary.GetInstance();
         }
     }
 }
