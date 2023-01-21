@@ -18,21 +18,20 @@ namespace LibraryApp.Screens.BookScreens
             GlobalLibrary glib = GlobalLibrary.GetInstance();
 
             Console.Clear();
-            Console.WriteLine("Title-------------------------Author-------------------------ISBN10-------------------------ISBN13");
+            Console.WriteLine("Title-------------------------Author------------------------ISBN10------------------------ISBN13------------------------");
 
             int maxTitleLength = 20;
             int maxAuthorLength = 20;
+            string sc = "-"; //Spacing character (It's a string, NOT a char)
             List<string> optionList = new List<string>();
             foreach (Book book in glib.Books)
             {
-                string sc = "-"; //Spacing character (It's a string, NOT a char)
-
                 string title = FieldToSpacedString(book.Title, maxTitleLength, sc);
                 string author = FieldToSpacedString(book.Author, maxAuthorLength, sc);
-                string isbn10 = FieldToSpacedString(book.Isbn10, maxTitleLength, sc);
-                string isbn13 = FieldToSpacedString(book.Isbn13, maxTitleLength, sc);
+                string isbn10 = FieldToSpacedString(book.Isbn10, 10, sc);
+                string isbn13 = FieldToSpacedString(book.Isbn13, 13, sc);
 
-                optionList.Add(title + author + isbn10 + isbn13);
+                optionList.Add($"{title}{author}{isbn10}{isbn13}");
             }
 
             string[] options = optionList.ToArray();

@@ -41,7 +41,7 @@ namespace LibraryApp
                     prefix = suffix = "-";
                 }
 
-                Console.WriteLine($"{prefix} {currentOption} {suffix}");
+                Console.WriteLine($"{currentOption}");
             }
             Console.ResetColor();
         
