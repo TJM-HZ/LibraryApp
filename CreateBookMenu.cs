@@ -15,11 +15,11 @@ namespace LibraryApp
             Console.WriteLine("Creating a new book");
             Console.WriteLine("Fields marked with * are required");
             RequiredStringField("Title", bb, bb.Title);
-            RequiredStringField("Title", bb, bb.Author);
+            RequiredStringField("Author", bb, bb.Author);
         }
         public void RequiredStringField(string fieldName, BookBuilder bb, Func<string, BookBuilder> method)
         {
-            Console.Write("Title*: ");
+            Console.Write($"{fieldName}*: ");
             string input = Console.ReadLine();
             if (input == null || input == "")
             {
@@ -28,7 +28,7 @@ namespace LibraryApp
             }
             else
             {
-                bb.Title(input);
+                method(input);
             }
         }
     }
