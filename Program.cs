@@ -1,4 +1,5 @@
-﻿using LibraryApp.Products;
+﻿using LibraryApp.Menus;
+using LibraryApp.Products;
 using LibraryApp.Products.ProductBuilders;
 using LibraryApp.Products.ProductFSM;
 using LibraryApp.Products.ProductTypes;
@@ -10,25 +11,21 @@ namespace LibraryApp
         static void Main(string[] args)
         {
             BookBuilder bb = BookBuilder.GetInstance();
+            GlobalLibrary glib = GlobalLibrary.GetInstance();
 
-            Book book1 = bb
-                .SetTitle("funbook")
-                .SetAuthor("A funny person")
-                .Build();
-            Book book2 = bb
-                .SetTitle("booker2")
-                .SetAuthor("A writer of books")
-                .Build();
+            // TitleScreen
 
-            ProductBundle bundle1 = new ProductBundle("Big Bundle");
-            bundle1.Add(book1);
-            bundle1.Add(book2);
+            // AddBookScreen - Screen for adding a new book
+            // IndexBooksScreen - Screen for showing all books
+            // ViewBookScreen - Screen for a selected book (printDetails etc.)
 
-            bundle1.PrintDetails();
+            // AddBundleScreen - Screen for adding a new bundle
+            // IndexBundleScreen - Screen for showing all bundles
+            // ViewBundleScreen - Screen for a selected bundle (Shows an index of books in the bundle)
 
-            bundle1.Remove(book1);
 
-            bundle1.PrintDetails();
+            CreateBookMenu cbMenu = new CreateBookMenu(bb, glib);
+
         }
     }
 }

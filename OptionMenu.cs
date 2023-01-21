@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
-    internal class Menu
+    abstract class OptionMenu
     {
-        private string _prompt;
-        private string[] _options;
-        private int _selectedIndex;
+        protected string _prompt;
+        protected string[] _options;
+        protected int _selectedIndex;
 
 
-        public Menu(string prompt, string[] options)
+        public OptionMenu(string prompt, string[] options)
         {
             _options = options;
             _prompt = prompt;

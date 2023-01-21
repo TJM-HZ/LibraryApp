@@ -51,59 +51,59 @@ namespace LibraryApp.Products.ProductBuilders
             return _instance;
         }
 
-        public BookBuilder SetTitle(string title)
+        public BookBuilder Title(string title)
         {
             this._title = title;
             return this;
         }
 
-        public BookBuilder SetState(ProductState state) {
+        public BookBuilder State(ProductState state) {
             this._state = state;
             return this;        
         }
 
-        public BookBuilder SetAuthor(string author)
+        public BookBuilder Author(string author)
         {
             this._author = author;
             return this;
         }
-        public BookBuilder SetIllustrator(string illustrator)
+        public BookBuilder Illustrator(string illustrator)
         {
             this._illustrator = illustrator;
             return this;
         }
 
-        public BookBuilder SetPublisher(string publisher)
+        public BookBuilder Publisher(string publisher)
         {
             this._publisher = publisher;
             return this;
         }
 
-        public BookBuilder SetLanguage(string language)
+        public BookBuilder Language(string language)
         {
             this._language = language;
             return this;
         }
 
-        public BookBuilder SetCountry(string country)
+        public BookBuilder Country(string country)
         {
             this._country = country;
             return this;
         }
 
-        public BookBuilder SetPrintLength(int printLength)
+        public BookBuilder PrintLength(int printLength)
         {
             this._printLength = printLength;
             return this;
         }
 
-        private BookBuilder SetIsbn10(string isbn10)
+        public BookBuilder Isbn10(string isbn10)
         {
             this._isbn10 = isbn10;
             return this;
         }
 
-        private BookBuilder SetIsbn13(string isbn13)
+        public BookBuilder Isbn13(string isbn13)
         {
             this._isbn13 = isbn13;
             return this;
