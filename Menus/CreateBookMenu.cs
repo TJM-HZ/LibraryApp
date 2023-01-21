@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryApp
+namespace LibraryApp.Menus
 {
     internal class CreateBookMenu
     {
-        public CreateBookMenu(BookBuilder bb)
+        public CreateBookMenu(BookBuilder bb, GlobalLibrary glib)
         {
             Console.Clear();
             Console.WriteLine("Creating a new book");
@@ -28,9 +28,9 @@ namespace LibraryApp
             StringField("Print Length", true, bb.PrintLength);
             StringField("ISBN-10", false, bb.Isbn10);
             StringField("ISBN-13", false, bb.Isbn13);
-            Book newBook = bb.Build();
+            glib.addBook(bb.Build());
             Console.Clear();
-            newBook.PrintDetails();
+            
         }
         public void StringField(string fieldName, bool isRequired, Func<string, BookBuilder> method)
         {
@@ -40,7 +40,7 @@ namespace LibraryApp
             {
                 // Clear the last line upon making an error
                 Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Write(new String(' ', Console.BufferWidth));
+                Console.Write(new string(' ', Console.BufferWidth));
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
 
                 //Console.ForegroundColor = ConsoleColor.Red;
@@ -63,7 +63,7 @@ namespace LibraryApp
             {
                 // Clear the last line upon making an error
                 Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Write(new String(' ', Console.BufferWidth));
+                Console.Write(new string(' ', Console.BufferWidth));
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
 
                 //Console.ForegroundColor = ConsoleColor.Red;
@@ -72,7 +72,7 @@ namespace LibraryApp
             }
             else
             {
-                method(Int16.Parse(input));
+                method(short.Parse(input));
             }
         }
 

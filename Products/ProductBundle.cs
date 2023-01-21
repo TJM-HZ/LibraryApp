@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryApp.Products
 {
-    class ProductBundle : Product
+    public class ProductBundle : Product
     {
         protected List<Product> Products = new List<Product>();
 

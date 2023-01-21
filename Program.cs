@@ -1,4 +1,5 @@
-﻿using LibraryApp.Products;
+﻿using LibraryApp.Menus;
+using LibraryApp.Products;
 using LibraryApp.Products.ProductBuilders;
 using LibraryApp.Products.ProductFSM;
 using LibraryApp.Products.ProductTypes;
@@ -10,7 +11,9 @@ namespace LibraryApp
         static void Main(string[] args)
         {
             BookBuilder bb = BookBuilder.GetInstance();
-            CreateBookMenu cbMenu = new CreateBookMenu(bb);
+            GlobalLibrary glib = GlobalLibrary.GetInstance();
+
+            CreateBookMenu cbMenu = new CreateBookMenu(bb, glib);
 
         }
     }
