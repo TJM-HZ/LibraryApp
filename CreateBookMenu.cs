@@ -14,12 +14,13 @@ namespace LibraryApp
             Console.Clear();
             Console.WriteLine("Creating a new book");
             Console.WriteLine("Fields marked with * are required");
-            StringField("Title", true, bb, bb.Title);
-            StringField("Author", true, bb, bb.Author);
+            StringField("Title", true, bb.Title);
+            StringField("Author", true, bb.Author);
         }
-        public void StringField(string fieldName, bool isRequired, BookBuilder bb, Func<string, BookBuilder> method)
+        public void StringField(string fieldName, bool isRequired, Func<string, BookBuilder> method)
         {
             // TODO: Make line white once it's valid again
+
             string suffix = "";
             if (isRequired) { suffix = "*"; }
 
@@ -33,7 +34,7 @@ namespace LibraryApp
                 Console.SetCursorPosition(0, Console.CursorTop - 1);
 
                 Console.ForegroundColor = ConsoleColor.Red;
-                StringField(fieldName, true, bb, method);
+                StringField(fieldName, true, method);
                 Console.ResetColor();
             }
             else
