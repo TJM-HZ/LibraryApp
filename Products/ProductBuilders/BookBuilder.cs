@@ -97,13 +97,13 @@ namespace LibraryApp.Products.ProductBuilders
             return this;
         }
 
-        private BookBuilder Isbn10(string isbn10)
+        public BookBuilder Isbn10(string isbn10)
         {
             this._isbn10 = isbn10;
             return this;
         }
 
-        private BookBuilder Isbn13(string isbn13)
+        public BookBuilder Isbn13(string isbn13)
         {
             this._isbn13 = isbn13;
             return this;
