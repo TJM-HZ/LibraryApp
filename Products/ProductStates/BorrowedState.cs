@@ -8,15 +8,15 @@ namespace LibraryApp.Products.ProductFSM
 {
     class BorrowedState : ProductState
     {
-        public override void BorrowProduct()
+        public override string BorrowProduct()
         {
-            Console.WriteLine($"Sorry, {this.Product.GetType()} {this.Product.Title} has already been borrowed...");
+            return $"Sorry, {this.Product.Title} has already been borrowed.";
         }
 
-        public override void ReturnProduct()
+        public override string ReturnProduct()
         {
-            Console.WriteLine($"Product {this.Product.Title} returned. Thank you!");
             this.Product.TransitionTo(new AvailableState());
+            return $"{this.Product.Title} returned to library.";
         }
     }
 }

@@ -16,7 +16,7 @@ namespace LibraryApp.Products.ProductFSM
             this.Product = product;
         }
 
-        public abstract void BorrowProduct();
-        public abstract void ReturnProduct();
+        public abstract string BorrowProduct();
+        public abstract string ReturnProduct();
     }
 }

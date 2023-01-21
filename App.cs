@@ -15,21 +15,9 @@ namespace LibraryApp
 
     class App
     {
-        public HomeScreen HomeScreen;
-
-        public BookHubScreen BookHubScreen;
-        public BookCreationScreen BookCreationScreen;
-        public BookIndexScreen BookIndexScreen;
-
         private Screen _currentScreen;
         public App()
         {
-
-            HomeScreen= new HomeScreen(this);
-            BookHubScreen= new BookHubScreen(this);
-            BookCreationScreen= new BookCreationScreen(this);
-            BookIndexScreen= new BookIndexScreen(this);
-
             ChangeScreen(new HomeScreen(this));
         }
 

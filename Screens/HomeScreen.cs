@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryApp.Screens.BookScreens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    App.ChangeScreen(App.BookHubScreen);
+                    App.ChangeScreen(new BookHubScreen(App));
                     break;
                 case 1:
                     Console.WriteLine("OPTION 1 SELECTED");
