@@ -1,10 +1,4 @@
-﻿using LibraryApp.Menus;
-using LibraryApp.Products;
-using LibraryApp.Products.ProductBuilders;
-using LibraryApp.Products.ProductFSM;
-using LibraryApp.Products.ProductTypes;
-
-namespace LibraryApp
+﻿namespace LibraryApp
 {
     internal class Program
     {

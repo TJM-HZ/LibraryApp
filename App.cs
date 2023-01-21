@@ -16,13 +16,12 @@ namespace LibraryApp
     class App
     {
         public HomeScreen HomeScreen;
+
         public BookHubScreen BookHubScreen;
         public BookCreationScreen BookCreationScreen;
         public BookIndexScreen BookIndexScreen;
 
-
-
-        Screen _currentScreen;
+        private Screen _currentScreen;
         public App()
         {
 

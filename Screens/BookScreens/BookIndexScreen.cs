@@ -37,6 +37,8 @@ namespace LibraryApp.Screens.BookScreens
             string[] options = optionList.ToArray();
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();
+
+            App.ChangeScreen(new ProductViewScreen(App, glib.Books[selectedIndex]));
         }
 
         private string FieldToSpacedString(string field, int maxLength, string spacingCharacter)
