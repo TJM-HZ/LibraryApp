@@ -7,23 +7,20 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
-    abstract class OptionMenu
+    class OptionMenu
     {
-        protected string _prompt;
         protected string[] _options;
         protected int _selectedIndex;
 
 
-        public OptionMenu(string prompt, string[] options)
+        public OptionMenu(string[] options)
         {
             _options = options;
-            _prompt = prompt;
             _selectedIndex = 0;
         }
 
         private void DisplayOptions()
         {
-            Console.WriteLine(_prompt);
             for(int i = 0; i < _options.Length; i++)
             {
                 string currentOption = _options[i];
@@ -56,7 +53,16 @@ namespace LibraryApp
             ConsoleKey keyPressed;
             do
             {
-                Console.Clear();
+                // Clear the last line upon making an error
+                
+                foreach(string s in _options)
+                {
+                    Console.SetCursorPosition(0, Console.CursorTop);
+                    Console.Write(new string(' ', Console.BufferWidth));
+                }
+
+                Console.SetCursorPosition(0, Console.CursorTop - this._options.Length);
+
                 DisplayOptions();
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
