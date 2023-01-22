@@ -69,6 +69,7 @@ namespace LibraryApp.Products.ProductTypes
             Console.WriteLine($"Print Length: {this._printLength}");
             Console.WriteLine($"ISBN-10: {this.Isbn10}");
             Console.WriteLine($"ISBN-13: {this.Isbn13}");
+            Console.WriteLine($"STATUS: {this.State.stateName.ToUpper()}");
             Console.WriteLine("----------------------------------------");
         }
     }

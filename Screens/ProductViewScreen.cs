@@ -22,9 +22,12 @@ namespace LibraryApp.Screens
         public override void Run()
         {
             Console.Clear();
+
+            
             _product.PrintDetails();
 
-            Console.WriteLine(_stateMsg);
+            Console.WriteLine(_stateMsg + "\n");
+
             string[] options = { "Mark product as borrowed", "Mark product as returned", "Back" };
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();
@@ -32,11 +35,11 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    _product.BorrowProduct();
+                    _stateMsg = _product.BorrowProduct();
                     Run();
                     break;
                 case 1:
-                    _product.ReturnProduct();
+                    _stateMsg = _product.ReturnProduct();
                     Run();
                     break;
                 case 2:

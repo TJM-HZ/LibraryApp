@@ -8,6 +8,11 @@ namespace LibraryApp.Products.ProductFSM
 {
     class BorrowedState : ProductState
     {
+        public BorrowedState()
+        {
+            this.stateName = "Borrowed";
+        }
+
         public override string BorrowProduct()
         {
             return $"Sorry, {this.Product.Title} has already been borrowed.";

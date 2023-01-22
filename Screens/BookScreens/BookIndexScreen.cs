@@ -34,11 +34,19 @@ namespace LibraryApp.Screens.BookScreens
                 optionList.Add($"{title}{author}{isbn10}{isbn13}");
             }
 
+            optionList.Insert(0, "Back");
+
             string[] options = optionList.ToArray();
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();
 
-            App.ChangeScreen(new ProductViewScreen(App, glib.Books[selectedIndex]));
+            if (selectedIndex == 0) 
+            { 
+                App.ChangeScreen(new BookHubScreen(App));
+            } else 
+            { 
+                App.ChangeScreen(new ProductViewScreen(App, glib.Books[selectedIndex-1]));
+            }
         }
 
         private string FieldToSpacedString(string field, int maxLength, string spacingCharacter)

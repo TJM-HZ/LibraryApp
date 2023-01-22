@@ -17,17 +17,22 @@ namespace LibraryApp.Products
             this.State.SetProduct(this);
         }
 
-        public void BorrowProduct()
+        public string BorrowProduct()
         {
-            this.State.BorrowProduct();
+            return this.State.BorrowProduct();
         }
 
-        public void ReturnProduct()
+        public string ReturnProduct()
         {
-            this.State.ReturnProduct();
+            return this.State.ReturnProduct();
         }
 
         public abstract void PrintDetails();
+
+        public ProductState GetProductState()
+        {
+            return this.State;
+        }
 
 
         public virtual void Add(Product product)
