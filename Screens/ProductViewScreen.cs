@@ -32,6 +32,8 @@ namespace LibraryApp.Screens
 
             Console.WriteLine();
 
+            //TODO / BUG: After marking products via a ProductBundle, the affected products become unresponsive to change through regular means.
+
             string[] options = { "Mark product as borrowed", "Mark product as returned", "Back" };
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();

@@ -60,18 +60,18 @@ namespace LibraryApp.Products.ProductTypes
         public override void PrintDetails(bool fullDetails)
         {
             if (fullDetails) { 
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine($"Title: {this.Title}");
-            Console.WriteLine($"Author: {this.Author}");
-            Console.WriteLine($"Illustrator: {this._illustrator}");
-            Console.WriteLine($"Publisher: {this._publisher}");
-            Console.WriteLine($"Language: {this._language}");
-            Console.WriteLine($"Country: {this._country}");
-            Console.WriteLine($"Print Length: {this._printLength}");
-            Console.WriteLine($"ISBN-10: {this.Isbn10}");
-            Console.WriteLine($"ISBN-13: {this.Isbn13}");
-            Console.WriteLine($"STATUS: {this.State.StateName.ToUpper()}");
-            Console.WriteLine("----------------------------------------");
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine($"Title: {this.Title}");
+                Console.WriteLine($"Author: {this.Author}");
+                Console.WriteLine($"Illustrator: {this._illustrator}");
+                Console.WriteLine($"Publisher: {this._publisher}");
+                Console.WriteLine($"Language: {this._language}");
+                Console.WriteLine($"Country: {this._country}");
+                Console.WriteLine($"Print Length: {this._printLength}");
+                Console.WriteLine($"ISBN-10: {this.Isbn10}");
+                Console.WriteLine($"ISBN-13: {this.Isbn13}");
+                Console.WriteLine($"STATUS: {this.State.StateName.ToUpper()}");
+                Console.WriteLine("----------------------------------------");
             }
             else
             {
