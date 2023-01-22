@@ -1,4 +1,5 @@
 ﻿using LibraryApp.Screens.BookScreens;
+using LibraryApp.Screens.BundleScreens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace LibraryApp.Screens
                     App.ChangeScreen(new BookHubScreen(App));
                     break;
                 case 1:
-                    Console.WriteLine("OPTION 1 SELECTED");
+                    Console.WriteLine(new BundleHubScreen(App));
                     break;
                 case 2:
                     Environment.Exit(0);

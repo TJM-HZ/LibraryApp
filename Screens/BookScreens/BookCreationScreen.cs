@@ -22,15 +22,13 @@ namespace LibraryApp.Screens.BookScreens
             requiredSuffix();
 
             Console.Write(" are required\n");
-            StringField("Title", true, bb.Title);
-            StringField("Author", true, bb.Author);
-            //StringField("Illustrator", false, bb.Illustrator);
-            //StringField("Publisher", false, bb.Publisher);
-            //StringField("Language", false, bb.Language);
-            //StringField("Country", false, bb.Country);
-            StringField("Print Length", true, bb.PrintLength);
-            StringField("ISBN-10", false, bb.Isbn10);
-            StringField("ISBN-13", false, bb.Isbn13);
+            bb.Title(StringField("Title", true));
+            bb.Author(StringField("Author", true));
+
+            bb.PrintLength(IntField("Print Length", true));
+            
+            bb.Isbn10(StringField("ISBN-10", false));
+            bb.Isbn13(StringField("ISBN-13", false));
             glib.addBook(bb.Build());
             
             Console.Clear();
@@ -52,7 +50,7 @@ namespace LibraryApp.Screens.BookScreens
             Console.ForegroundColor = color;
         }
 
-        public void StringField(string fieldName, bool isRequired, Func<string, BookBuilder> method)
+        public string StringField(string fieldName, bool isRequired)
         {
             string input = InputField(fieldName, isRequired);
 
@@ -61,20 +59,18 @@ namespace LibraryApp.Screens.BookScreens
                 // Clear the last line upon making an error
                 ClearLine();
 
-                StringField(fieldName, true, method);
+                StringField(fieldName, isRequired);
             }
-            else
-            {
-                method(input);
-            }
+            return input;
         }
 
         //TODO: Lots of code repeated. Try refactoring (parts of) this
         //UPDATE: InputField is poorly named but removes some code duplication.
 
-        public void StringField(string fieldName, bool isRequired, Func<int, BookBuilder> method)
+        public int IntField(string fieldName, bool isRequired)
         {
             string input = InputField(fieldName, isRequired);
+            int number = 0; // Default value to stop the compiler from complaining
 
             if (isRequired && (input == null || input == ""))
             {
@@ -82,20 +78,22 @@ namespace LibraryApp.Screens.BookScreens
                 //It doesn't affect the functioning of the app but it looks bad.
                 ClearLine();
 
-                StringField(fieldName, true, method);
+                IntField(fieldName, isRequired);
             }
             else
             {
-                try { method(short.Parse(input)); } 
-                catch 
+                try { 
+                    number = short.Parse(input); 
+                } catch
                 {
                     Console.SetCursorPosition(0, Console.CursorTop);
                     Console.Write(new string(' ', Console.BufferWidth));
                     Console.SetCursorPosition(0, Console.CursorTop - 1);
 
-                    StringField(fieldName, true, method);
+                    IntField(fieldName, isRequired);
                 }
             }
+            return number;
         }
 
         //TODO: Add this to a utility class of some kind.
