@@ -20,13 +20,13 @@ namespace LibraryApp.Screens.BundleScreens
             switch (selectedIndex)
             {
                 case 0:
-                    //App.ChangeScreen(new BundleCreationScreen(App));
+                    App.ChangeScreen(new BundleCreationScreen(App));
                     break;
                 case 1:
                     //App.ChangeScreen(new BundleIndexScreen(App));
                     break;
                 case 2:
-                    //App.ChangeScreen(new HomeScreen(App));
+                    App.ChangeScreen(new HomeScreen(App));
                     break;
             }
 
