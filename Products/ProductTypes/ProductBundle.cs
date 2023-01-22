@@ -17,16 +17,6 @@ namespace LibraryApp.Products.ProductTypes
             State = new AvailableState();
         }
 
-        public override void TransitionTo(ProductState state)
-        {
-            this.State = state;
-            this.State.SetProduct(this);
-            foreach (Product product in Products)
-            {
-                product.TransitionTo(state);
-            }
-        }
-
         public override void Add(Product product)
         {
             Products.Add(product);

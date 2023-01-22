@@ -23,7 +23,8 @@ namespace LibraryApp.Screens
         {
             Console.Clear();
             Console.WriteLine(this._product);
-            
+            Console.WriteLine(this._product.State);
+
             if ( _product is ProductBundle) {
                 _product.PrintDetails(false);
             } else
@@ -40,11 +41,11 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    _product.BorrowProduct();
+                    this._product.BorrowProduct();
                     Run();
                     break;
                 case 1:
-                    _product.ReturnProduct();
+                    this._product.ReturnProduct();
                     Run();
                     break;
                 case 2:

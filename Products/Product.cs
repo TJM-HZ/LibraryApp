@@ -7,9 +7,6 @@ namespace LibraryApp.Products
         public ProductState State { get; protected set; }
 
         public string Title { get; protected set; }
-        //protected DateTime? releaseDate;
-        //protected string creator;
-        //protected string publisher;
 
         public virtual void TransitionTo(ProductState state)
         {
@@ -17,12 +14,12 @@ namespace LibraryApp.Products
             this.State.SetProduct(this);
         }
 
-        public void BorrowProduct()
+        public virtual void BorrowProduct()
         {
             this.State.BorrowProduct();
         }
 
-        public void ReturnProduct()
+        public virtual void ReturnProduct()
         {
             this.State.ReturnProduct();
         }
