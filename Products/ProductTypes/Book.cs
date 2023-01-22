@@ -11,7 +11,7 @@ namespace LibraryApp.Products.ProductTypes
     {
         // TODO: Maybe I should add auto-implemented accessors for these fields?
 
-        private string? _author;
+        public string? Author { get; private set; }
         private string? _illustrator;
         private string? _publisher;
 
@@ -21,12 +21,12 @@ namespace LibraryApp.Products.ProductTypes
 
         private int? _printLength;
 
-        private string? _isbn10;
-        private string? _isbn13;
+        public string? Isbn10 { get; private set; }
+        public string? Isbn13 { get; private set; }
 
 
-        // TODO: Maybe the constructor can be cleaned up now that I have a Builder?
-        public Book(string title,
+    // TODO: Maybe the constructor can be cleaned up now that I have a Builder?
+    public Book(string title,
             ProductState? state, 
             string? author, string? 
             illustrator, string? 
@@ -47,28 +47,29 @@ namespace LibraryApp.Products.ProductTypes
             }
 
 
-            this._author = author;
+            this.Author = author;
             this._illustrator = illustrator;
             this._publisher = publisher;
             this._language = language;
             this._country = country;
             this._printLength = printlength;
-            this._isbn10 = isbn10;
-            this._isbn13 = isbn13;
+            this.Isbn10 = isbn10;
+            this.Isbn13 = isbn13;
         }
 
         public override void PrintDetails()
         {
             Console.WriteLine("----------------------------------------");
             Console.WriteLine($"Title: {this.Title}");
-            Console.WriteLine($"Author: {this._author}");
+            Console.WriteLine($"Author: {this.Author}");
             Console.WriteLine($"Illustrator: {this._illustrator}");
             Console.WriteLine($"Publisher: {this._publisher}");
             Console.WriteLine($"Language: {this._language}");
             Console.WriteLine($"Country: {this._country}");
             Console.WriteLine($"Print Length: {this._printLength}");
-            Console.WriteLine($"ISBN-10: {this._isbn10}");
-            Console.WriteLine($"ISBN-13: {this._isbn13}");
+            Console.WriteLine($"ISBN-10: {this.Isbn10}");
+            Console.WriteLine($"ISBN-13: {this.Isbn13}");
+            Console.WriteLine($"STATUS: {this.State.stateName.ToUpper()}");
             Console.WriteLine("----------------------------------------");
         }
     }

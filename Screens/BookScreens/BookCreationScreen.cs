@@ -23,25 +23,25 @@ namespace LibraryApp.Screens.BookScreens
 
             Console.Write(" are required\n");
             StringField("Title", true, bb.Title);
-            StringField("Author", false, bb.Author);
-            StringField("Illustrator", false, bb.Illustrator);
-            StringField("Publisher", false, bb.Publisher);
-            StringField("Language", false, bb.Language);
-            StringField("Country", false, bb.Country);
+            StringField("Author", true, bb.Author);
+            //StringField("Illustrator", false, bb.Illustrator);
+            //StringField("Publisher", false, bb.Publisher);
+            //StringField("Language", false, bb.Language);
+            //StringField("Country", false, bb.Country);
             StringField("Print Length", true, bb.PrintLength);
             StringField("ISBN-10", false, bb.Isbn10);
             StringField("ISBN-13", false, bb.Isbn13);
             glib.addBook(bb.Build());
+            
             Console.Clear();
             var latestBook = glib.Books.Last();
             latestBook.PrintDetails();
+            
             Console.WriteLine("New book added to the library");
             
             Console.WriteLine("Press any key to go back to the Book Hub");
             Console.ReadKey();
-            App.ChangeScreen(App.BookHubScreen);
-
-
+            App.ChangeScreen(new BookHubScreen(App));
         }
 
         private static void requiredSuffix()

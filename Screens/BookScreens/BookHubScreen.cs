@@ -20,13 +20,13 @@ namespace LibraryApp.Screens.BookScreens
             switch (selectedIndex)
             {
                 case 0:
-                    App.ChangeScreen(App.BookCreationScreen);
+                    App.ChangeScreen(new BookCreationScreen(App));
                     break;
                 case 1:
-                    App.ChangeScreen(App.BookIndexScreen);
+                    App.ChangeScreen(new BookIndexScreen(App));
                     break;
                 case 2:
-                    App.ChangeScreen(App.HomeScreen);
+                    App.ChangeScreen(new HomeScreen(App));
                     break;
             }
 

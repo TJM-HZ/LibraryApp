@@ -41,7 +41,7 @@ namespace LibraryApp
                     prefix = suffix = "-";
                 }
 
-                Console.WriteLine($"{prefix} {currentOption} {suffix}");
+                Console.WriteLine($"{currentOption}");
             }
             Console.ResetColor();
         
@@ -58,11 +58,7 @@ namespace LibraryApp
                 Console.SetCursorPosition(0, Console.CursorTop - this._options.Length);
                 Console.Write("", Console.BufferWidth);
 
-
-
-
                 DisplayOptions();
-                
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                 keyPressed = keyInfo.Key;

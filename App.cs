@@ -8,29 +8,11 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
-
-    // TODO: Not sure how I feel about this scene system.
-    // I chose to do it this way in order to avoid creating a new Screen object every time I switch scenes,
-    // but I doubt this is the cleanest implementation.
-
     class App
     {
-        public HomeScreen HomeScreen;
-        public BookHubScreen BookHubScreen;
-        public BookCreationScreen BookCreationScreen;
-        public BookIndexScreen BookIndexScreen;
-
-
-
-        Screen _currentScreen;
+        private Screen _currentScreen;
         public App()
         {
-
-            HomeScreen= new HomeScreen(this);
-            BookHubScreen= new BookHubScreen(this);
-            BookCreationScreen= new BookCreationScreen(this);
-            BookIndexScreen= new BookIndexScreen(this);
-
             ChangeScreen(new HomeScreen(this));
         }
 

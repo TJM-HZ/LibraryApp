@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryApp.Products
+namespace LibraryApp.Products.ProductTypes
 {
     public class ProductBundle : Product
     {
@@ -18,26 +18,27 @@ namespace LibraryApp.Products
 
         public override void TransitionTo(ProductState state)
         {
-            foreach (Product product in Products) { 
+            foreach (Product product in Products)
+            {
                 product.TransitionTo(state);
             }
         }
 
         public override void Add(Product product)
         {
-            this.Products.Add(product);
+            Products.Add(product);
         }
 
         public override void Remove(Product product)
         {
-            this.Products.Remove(product);
+            Products.Remove(product);
         }
 
         public override void PrintDetails()
         {
             Console.WriteLine($"Bundle Name: {Title}");
 
-            foreach (Product product in this.Products)
+            foreach (Product product in Products)
             {
                 product.PrintDetails();
             }
