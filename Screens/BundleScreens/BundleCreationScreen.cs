@@ -11,7 +11,7 @@ namespace LibraryApp.Screens.BundleScreens
 {
     internal class BundleCreationScreen : CreationScreen
     {
-        public BundleCreationScreen(App app) : base(app)
+        public BundleCreationScreen(App app, Screen previousScreen) : base(app, previousScreen)
         {
         }
 
@@ -33,7 +33,7 @@ namespace LibraryApp.Screens.BundleScreens
 
             Console.WriteLine("Press any key to go back to the Bundle Hub");
             Console.ReadKey();
-            App.ChangeScreen(new BundleHubScreen(App));
+            App.ChangeScreen(PreviousScreen);
         }
     }
 }

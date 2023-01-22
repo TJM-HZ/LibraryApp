@@ -9,7 +9,7 @@ namespace LibraryApp.Screens.BookScreens
 {
     class BookIndexScreen : IndexScreen
     {
-        public BookIndexScreen(App app) : base(app)
+        public BookIndexScreen(App app, Screen previousScreen) : base(app, previousScreen)
         {
         }
 
@@ -45,10 +45,10 @@ namespace LibraryApp.Screens.BookScreens
 
             if (selectedIndex == 0) 
             { 
-                App.ChangeScreen(new BookHubScreen(App));
+                App.ChangeScreen(PreviousScreen);
             } else 
             { 
-                App.ChangeScreen(new ProductViewScreen(App, glib.Books[selectedIndex-1]));
+                App.ChangeScreen(new ProductViewScreen(App, glib.Books[selectedIndex-1], this));
             }
         }
     }

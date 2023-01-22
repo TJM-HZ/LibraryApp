@@ -75,7 +75,7 @@ namespace LibraryApp.Products.ProductTypes
             }
             else
             {
-                Console.WriteLine($"Title: {Title}");
+                Console.WriteLine($"Title: {Title} | Status: {State.StateName.ToUpper()}");
             }
         }
     }

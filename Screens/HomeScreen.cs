@@ -35,10 +35,10 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
-                    App.ChangeScreen(new BookHubScreen(App));
+                    App.ChangeScreen(new BookHubScreen(App, this));
                     break;
                 case 1:
-                    App.ChangeScreen(new BundleIndexScreen(App));
+                    App.ChangeScreen(new BundleIndexScreen(App, this));
                     break;
                 case 2:
                     Environment.Exit(0);

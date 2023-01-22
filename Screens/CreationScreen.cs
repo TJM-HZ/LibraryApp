@@ -8,7 +8,7 @@ namespace LibraryApp.Screens
 {
     abstract class CreationScreen : Screen
     {
-        protected CreationScreen(App app) : base(app)
+        protected CreationScreen(App app, Screen previousScreen) : base(app, previousScreen)
         {
         }
 

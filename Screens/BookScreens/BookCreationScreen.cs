@@ -9,7 +9,7 @@ namespace LibraryApp.Screens.BookScreens
 {
     class BookCreationScreen : CreationScreen
     {
-        public BookCreationScreen(App app) : base(app) { }
+        public BookCreationScreen(App app, Screen previousScreen) : base(app, previousScreen) { }
 
         public override void Run()
         {
@@ -39,7 +39,7 @@ namespace LibraryApp.Screens.BookScreens
             
             Console.WriteLine("Press any key to go back to the Book Hub");
             Console.ReadKey();
-            App.ChangeScreen(new BookHubScreen(App));
+            App.ChangeScreen(PreviousScreen);
         }
 
         

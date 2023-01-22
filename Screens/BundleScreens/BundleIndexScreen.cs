@@ -10,7 +10,7 @@ namespace LibraryApp.Screens.BundleScreens
 {
     class BundleIndexScreen : IndexScreen
     {
-        public BundleIndexScreen(App app) : base(app) { }
+        public BundleIndexScreen(App app, Screen previousScreen) : base(app, previousScreen) { }
 
         public override void Run()
         {
@@ -39,11 +39,11 @@ namespace LibraryApp.Screens.BundleScreens
 
             if (selectedIndex == 0)
             {
-                App.ChangeScreen(new BundleHubScreen(App));
+                App.ChangeScreen(PreviousScreen);
             }
             else
             {
-                App.ChangeScreen(new ProductViewScreen(App, glib.Bundles[selectedIndex - 1]));
+                App.ChangeScreen(new ProductViewScreen(App, glib.Bundles[selectedIndex - 1], this));
             }
         }
     }

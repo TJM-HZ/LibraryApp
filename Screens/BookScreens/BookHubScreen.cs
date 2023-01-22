@@ -8,7 +8,7 @@ namespace LibraryApp.Screens.BookScreens
 {
     class BookHubScreen : Screen
     {
-        public BookHubScreen(App app) : base(app) { }
+        public BookHubScreen(App app, Screen previousScreen) : base(app, previousScreen) { }
 
         public override void Run()
         {
@@ -20,13 +20,13 @@ namespace LibraryApp.Screens.BookScreens
             switch (selectedIndex)
             {
                 case 0:
-                    App.ChangeScreen(new BookCreationScreen(App));
+                    App.ChangeScreen(new BookCreationScreen(App, this));
                     break;
                 case 1:
-                    App.ChangeScreen(new BookIndexScreen(App));
+                    App.ChangeScreen(new BookIndexScreen(App, this));
                     break;
                 case 2:
-                    App.ChangeScreen(new HomeScreen(App));
+                    App.ChangeScreen(PreviousScreen);
                     break;
             }
 

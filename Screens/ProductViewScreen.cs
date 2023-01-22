@@ -14,10 +14,11 @@ namespace LibraryApp.Screens
         protected Product _product;
         protected string _stateMsg;
           
-        public ProductViewScreen(App app, Product product) : base(app)
+        public ProductViewScreen(App app, Product product, Screen previousScreen) : base(app)
         {
             _product = product;
             _stateMsg = "";
+            PreviousScreen = previousScreen;
         }
 
         public override void Run()
@@ -32,6 +33,8 @@ namespace LibraryApp.Screens
                 _product.PrintDetails(true);
             }
 
+            Console.WriteLine();
+
             string[] options = { "Mark product as borrowed", "Mark product as returned", "Back" };
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();
@@ -45,7 +48,7 @@ namespace LibraryApp.Screens
                     Run();
                     break;
                 case 2:
-                    App.ChangeScreen(new BookIndexScreen(App));
+                    App.ChangeScreen(PreviousScreen);
                     break;
             }
         }

@@ -8,7 +8,7 @@ namespace LibraryApp.Screens
 {
     class IndexScreen : Screen
     {
-        public IndexScreen(App app) : base(app)
+        public IndexScreen(App app, Screen previousScreen) : base(app, previousScreen)
         {
         }
 
