@@ -33,8 +33,8 @@ namespace LibraryApp.Screens.BookScreens
                 string title = FieldToSpacedString(book.Title, maxTitleLength, sc);
                 string author = FieldToSpacedString(book.Author, maxAuthorLength, sc);
                 string isbn13 = FieldToSpacedString(book.Isbn13, 13, sc);
-                string availability = FieldToSpacedString(book.GetProductState().StateName, 20, sc);
-                optionList.Add($"{title}{author}{isbn13}");
+                string availability = FieldToSpacedString(book.State.StateName, 20, sc);
+                optionList.Add($"{title}{author}{isbn13}{availability}");
             }
 
             optionList.Insert(0, "Back");

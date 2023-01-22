@@ -54,7 +54,7 @@ namespace LibraryApp.Screens
             {
                 try
                 {
-                    number = short.Parse(input);
+                    return number = short.Parse(input);
                 }
                 catch
                 {

@@ -4,7 +4,7 @@ namespace LibraryApp.Products
 {
     public abstract class Product
     {
-        protected ProductState State;
+        public ProductState State { get; protected set; }
 
         public string Title { get; protected set; }
         //protected DateTime? releaseDate;
@@ -28,11 +28,6 @@ namespace LibraryApp.Products
         }
 
         public abstract void PrintDetails();
-
-        public ProductState GetProductState()
-        {
-            return this.State;
-        }
 
 
         public virtual void Add(Product product)
