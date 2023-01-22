@@ -9,19 +9,18 @@ namespace LibraryApp.Products.ProductFSM
     class AvailableState : ProductState
     {
 
-        public AvailableState() {
-            this.stateName = "Available";
+        public AvailableState() 
+        {
+            this.StateName = "Available";
         }
 
-        public override string BorrowProduct()
+        public override void BorrowProduct()
         {
             this.Product.TransitionTo(new BorrowedState());
-            return $"Product {this.Product.Title} is now borrowed. Enjoy!";
         }
 
-        public override string ReturnProduct()
+        public override void ReturnProduct()
         {
-            return $"Product {this.Product.Title} wasn't borrowed, so it cannot be returned...";
         }
     }
 }

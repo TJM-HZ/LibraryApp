@@ -41,7 +41,7 @@ namespace LibraryApp.Products.ProductTypes
             this.TransitionTo(state);
         }
 
-        public override void PrintDetails()
+        public override void PrintDetails(bool fullDetails)
         {
             throw new NotImplementedException();
         }

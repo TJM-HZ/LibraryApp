@@ -113,6 +113,7 @@ namespace LibraryApp.Products.ProductBuilders
         {
             this._title = null;
             this._author = null;
+            this._state = null;
             this._illustrator = null;
             this._publisher=null;
             this._language = null;
