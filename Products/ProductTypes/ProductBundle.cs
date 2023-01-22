@@ -14,8 +14,37 @@ namespace LibraryApp.Products.ProductTypes
         public ProductBundle(string title)
         {
             Title = title;
-            State = new AvailableState();
+            this.TransitionTo(new AvailableState());
         }
+
+        public ProductBundle(string title, ProductState state)
+        {
+            Title = title;
+            this.TransitionTo(state);
+        }
+
+        public override void TransitionTo(ProductState state)
+        {
+            this.State = state;
+            this.State.SetProduct(this);
+            foreach (Product product in Products)
+            {
+                product.TransitionTo(state);
+            }
+        }
+
+        // TODO: This is a hacky workaround
+
+        public override void BorrowProduct()
+        {
+            this.TransitionTo(new BorrowedState());
+        }
+
+        public override void ReturnProduct()
+        {
+            this.TransitionTo(new AvailableState());
+        }
+
 
         public override void Add(Product product)
         {

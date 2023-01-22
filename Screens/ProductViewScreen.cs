@@ -22,8 +22,6 @@ namespace LibraryApp.Screens
         public override void Run()
         {
             Console.Clear();
-            Console.WriteLine(this._product);
-            Console.WriteLine(this._product.State);
 
             if ( _product is ProductBundle) {
                 _product.PrintDetails(false);

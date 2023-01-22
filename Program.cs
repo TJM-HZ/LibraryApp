@@ -20,7 +20,7 @@ namespace LibraryApp
                 .Publisher("Addison-Wesley")
                 .PrintLength(395)
                 .Isbn10("0201633612")
-                .State(new BorrowedState())
+                .State(new AvailableState())
                 .Build()
             );
 
@@ -64,6 +64,7 @@ namespace LibraryApp
             );
 
             glib.addBundle(new ProductBundle("Programming Books"));
+            glib.Bundles.Last().TransitionTo(new BorrowedState());
             glib.Bundles.Last().Add(glib.Books[0]);
             glib.Bundles.Last().Add(glib.Books[1]);
 
