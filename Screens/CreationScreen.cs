@@ -29,7 +29,7 @@ namespace LibraryApp.Screens
                 // Clear the last line upon making an error
                 ClearLine();
 
-                StringField(fieldName, isRequired);
+                return StringField(fieldName, isRequired);
             }
             return input;
         }
@@ -40,7 +40,6 @@ namespace LibraryApp.Screens
         public int IntField(string fieldName, bool isRequired)
         {
             string input = InputField(fieldName, isRequired);
-            int number = 0; // Default value to stop the compiler from complaining
 
             if (isRequired && (input == null || input == ""))
             {
@@ -48,13 +47,13 @@ namespace LibraryApp.Screens
                 //It doesn't affect the functioning of the app but it looks bad.
                 ClearLine();
 
-                IntField(fieldName, isRequired);
+                return IntField(fieldName, isRequired);
             }
             else
             {
                 try
                 {
-                    return number = short.Parse(input);
+                    return short.Parse(input);
                 }
                 catch
                 {
@@ -62,10 +61,9 @@ namespace LibraryApp.Screens
                     Console.Write(new string(' ', Console.BufferWidth));
                     Console.SetCursorPosition(0, Console.CursorTop - 1);
 
-                    IntField(fieldName, isRequired);
+                    return IntField(fieldName, isRequired);
                 }
             }
-            return number;
         }
 
         //TODO: Add this to a utility class of some kind.

@@ -13,8 +13,13 @@ namespace LibraryApp.Screens
         }
 
         public string FieldToSpacedString(string field, int maxLength, string spacingCharacter)
-        {
+        {            
+            if (field == null) {
+                field = "";
+            }
             string convertedField = field;
+
+
             if (field.Length > maxLength)
             {
                 convertedField = field.Substring(0, maxLength) + "...";

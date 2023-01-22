@@ -6,24 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryApp.Screens
+namespace LibraryApp.Screens.BundleScreens
 {
-    class ProductViewScreen : Screen
+    class BundleViewScreen : ProductViewScreen
     {
-        protected Product _product;
-        protected string _stateMsg;
-          
-        public ProductViewScreen(App app, Product product) : base(app)
+        public BundleViewScreen(App app, Product product) : base(app, product)
         {
-            _product = product;
-            _stateMsg = "";
         }
 
         public override void Run()
         {
             Console.Clear();
 
-            
+
             _product.PrintDetails();
 
             Console.WriteLine(_stateMsg + "\n");
