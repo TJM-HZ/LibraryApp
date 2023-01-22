@@ -14,6 +14,7 @@ namespace LibraryApp.Products.ProductTypes
         public ProductBundle(string title)
         {
             Title = title;
+            State = new AvailableState();
         }
 
         public override void TransitionTo(ProductState state)
@@ -39,13 +40,13 @@ namespace LibraryApp.Products.ProductTypes
             return Products.Count;
         }
 
-        public override void PrintDetails()
+        public override void PrintDetails(bool fullDetails)
         {
             Console.WriteLine($"Bundle Name: {Title}");
 
             foreach (Product product in Products)
             {
-                product.PrintDetails();
+                product.PrintDetails(fullDetails);
             }
         }
     }

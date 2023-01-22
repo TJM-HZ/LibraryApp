@@ -38,7 +38,7 @@ namespace LibraryApp.Screens
                     App.ChangeScreen(new BookHubScreen(App));
                     break;
                 case 1:
-                    App.ChangeScreen(new BundleHubScreen(App));
+                    App.ChangeScreen(new BundleIndexScreen(App));
                     break;
                 case 2:
                     Environment.Exit(0);

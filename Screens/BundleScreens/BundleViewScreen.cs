@@ -18,27 +18,22 @@ namespace LibraryApp.Screens.BundleScreens
         {
             Console.Clear();
 
+            _product.PrintDetails(false);
 
-            _product.PrintDetails();
-
-            Console.WriteLine(_stateMsg + "\n");
-
-            string[] options = { "Mark product as borrowed", "Mark product as returned", "Back" };
+            string[] options = { "Mark products as borrowed", "Mark product as returned", "Back" };
             OptionMenu optionMenu = new OptionMenu(options);
             int selectedIndex = optionMenu.Run();
 
             switch (selectedIndex)
             {
                 case 0:
-                    _stateMsg = _product.BorrowProduct();
                     Run();
                     break;
                 case 1:
-                    _stateMsg = _product.ReturnProduct();
                     Run();
                     break;
                 case 2:
-                    App.ChangeScreen(new BookIndexScreen(App));
+                    App.ChangeScreen(new BundleIndexScreen(App));
                     break;
             }
         }

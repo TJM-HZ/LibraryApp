@@ -1,4 +1,5 @@
 ﻿using LibraryApp.Products.ProductBuilders;
+using LibraryApp.Products.ProductTypes;
 
 namespace LibraryApp
 {
@@ -59,6 +60,9 @@ namespace LibraryApp
                 .Build()
             );
 
+            glib.addBundle(new ProductBundle("Programming Books"));
+            glib.Bundles.Last().Add(glib.Books[0]);
+            glib.Bundles.Last().Add(glib.Books[1]);
 
             App App = new App();
         }

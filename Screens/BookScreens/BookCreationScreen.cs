@@ -33,7 +33,7 @@ namespace LibraryApp.Screens.BookScreens
             
             Console.Clear();
             var latestBook = glib.Books.Last();
-            latestBook.PrintDetails();
+            latestBook.PrintDetails(true);
             
             Console.WriteLine("New book added to the library");
             

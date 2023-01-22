@@ -57,8 +57,9 @@ namespace LibraryApp.Products.ProductTypes
             this.Isbn13 = isbn13;
         }
 
-        public override void PrintDetails()
+        public override void PrintDetails(bool fullDetails)
         {
+            if (fullDetails) { 
             Console.WriteLine("----------------------------------------");
             Console.WriteLine($"Title: {this.Title}");
             Console.WriteLine($"Author: {this.Author}");
@@ -71,6 +72,11 @@ namespace LibraryApp.Products.ProductTypes
             Console.WriteLine($"ISBN-13: {this.Isbn13}");
             Console.WriteLine($"STATUS: {this.State.StateName.ToUpper()}");
             Console.WriteLine("----------------------------------------");
+            }
+            else
+            {
+                Console.WriteLine($"Title: {Title}");
+            }
         }
     }
 }
