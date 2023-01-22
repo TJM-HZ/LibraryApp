@@ -24,8 +24,6 @@ namespace LibraryApp.Products.ProductTypes
         public string? Isbn10 { get; private set; }
         public string? Isbn13 { get; private set; }
 
-
-    // TODO: Maybe the constructor can be cleaned up now that I have a Builder?
     public Book(string title,
             ProductState? state, 
             string? author, string? 

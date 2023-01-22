@@ -11,7 +11,7 @@ namespace LibraryApp
             BookBuilder bb = BookBuilder.GetInstance();
             GlobalLibrary glib = GlobalLibrary.GetInstance();
 
-            // Creating some books by default
+            // Creating some books and bundles by default as an example
             glib.addBook(
                 bb
                 .Title("Design Patterns: Elements of Reusable Object-Oriented Software")

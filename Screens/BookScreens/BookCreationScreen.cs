@@ -24,11 +24,13 @@ namespace LibraryApp.Screens.BookScreens
             
             bb.Title(StringField("Title", true));
             bb.Author(StringField("Author", true));
-
             bb.PrintLength(IntField("Print Length", true));
-            
             bb.Isbn10(StringField("ISBN-10", false));
             bb.Isbn13(StringField("ISBN-13", false));
+            bb.Publisher(StringField("Publisher", false));
+            bb.Illustrator(StringField("Illustrator", false));
+            bb.Country(StringField("Country", false));
+            bb.Language(StringField("Language", false));
             glib.addBook(bb.Build());
             
             Console.Clear();
