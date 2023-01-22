@@ -23,7 +23,7 @@ namespace LibraryApp.Screens.BundleScreens
                     App.ChangeScreen(new BundleCreationScreen(App));
                     break;
                 case 1:
-                    //App.ChangeScreen(new BundleIndexScreen(App));
+                    App.ChangeScreen(new BundleIndexScreen(App));
                     break;
                 case 2:
                     App.ChangeScreen(new HomeScreen(App));

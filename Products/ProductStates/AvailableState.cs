@@ -10,7 +10,7 @@ namespace LibraryApp.Products.ProductFSM
     {
 
         public AvailableState() {
-            this.stateName = "Available";
+            this.StateName = "Available";
         }
 
         public override string BorrowProduct()

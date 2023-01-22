@@ -34,6 +34,11 @@ namespace LibraryApp.Products.ProductTypes
             Products.Remove(product);
         }
 
+        public int Length()
+        {
+            return Products.Count;
+        }
+
         public override void PrintDetails()
         {
             Console.WriteLine($"Bundle Name: {Title}");

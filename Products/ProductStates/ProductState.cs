@@ -10,7 +10,7 @@ namespace LibraryApp.Products.ProductFSM
     public abstract class ProductState
     {
         protected Product Product;
-        public String stateName { get; protected set; }
+        public String StateName { get; protected set; }
         public void SetProduct(Product product)
         {
             this.Product = product;
