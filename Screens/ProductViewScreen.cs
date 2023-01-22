@@ -12,19 +12,17 @@ namespace LibraryApp.Screens
     class ProductViewScreen : Screen
     {
         protected Product _product;
-        protected string _stateMsg;
           
         public ProductViewScreen(App app, Product product, Screen previousScreen) : base(app)
         {
             _product = product;
-            _stateMsg = "";
             PreviousScreen = previousScreen;
         }
 
         public override void Run()
         {
             Console.Clear();
-
+            Console.WriteLine(this._product);
             
             if ( _product is ProductBundle) {
                 _product.PrintDetails(false);
@@ -42,9 +40,11 @@ namespace LibraryApp.Screens
             switch (selectedIndex)
             {
                 case 0:
+                    _product.BorrowProduct();
                     Run();
                     break;
                 case 1:
+                    _product.ReturnProduct();
                     Run();
                     break;
                 case 2:

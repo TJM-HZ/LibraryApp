@@ -13,15 +13,13 @@ namespace LibraryApp.Products.ProductFSM
             this.StateName = "Borrowed";
         }
 
-        public override string BorrowProduct()
+        public override void BorrowProduct()
         {
-            return $"Sorry, {this.Product.Title} has already been borrowed.";
         }
 
-        public override string ReturnProduct()
+        public override void ReturnProduct()
         {
             this.Product.TransitionTo(new AvailableState());
-            return $"{this.Product.Title} returned to library.";
         }
     }
 }

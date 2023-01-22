@@ -1,4 +1,5 @@
 ﻿using LibraryApp.Products.ProductBuilders;
+using LibraryApp.Products.ProductFSM;
 using LibraryApp.Products.ProductTypes;
 
 namespace LibraryApp
@@ -19,6 +20,7 @@ namespace LibraryApp
                 .Publisher("Addison-Wesley")
                 .PrintLength(395)
                 .Isbn10("0201633612")
+                .State(new BorrowedState())
                 .Build()
             );
 
@@ -32,6 +34,7 @@ namespace LibraryApp
                 .PrintLength(528)
                 .Isbn10("1617294535")
                 .Isbn13("978-1617294532")
+                .State(new BorrowedState())
                 .Build()
             );
 
